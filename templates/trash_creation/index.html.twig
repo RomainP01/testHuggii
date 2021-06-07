@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Trash Manager{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Créer un déchet</h1>
+        <a href="{{ path( "trash_index") }}" class="btn btn-secondary">Retour</a>
+        {% include ("trash_creation/_form.html.twig") %}
+
+    </div>
+{% endblock %}

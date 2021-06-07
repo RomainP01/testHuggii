@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PDFTrashController!{% endblock %}
+
+{% block body %}
+    {% for t in trash %}
+        <div class="container">
+            <a class="btn btn-secondary" href="{{ path("trash_index") }}">Retour</a>
+            <div class="row justify-content-md-between">
+
+                <div class="col-4">
+                    <h3>Référence : {{ t.id }}</h3>
+                </div>
+                <div class="col-6">
+                    <h3>Date de création : {{ t.CreationDate|date('d-m-Y')}}</h3>
+                </div>
+
+            </div>
+            <div>
+                <h1 style="margin-top: 10%; margin-left: 15%">{{ t.name }}</h1>
+            </div>
+            <div>
+                <h4>{{ type }}</h4>
+            </div>
+            <div>
+                <h4>Date d'enlèvement : {{ t.PickupDate|date('d-m-Y')}}</h4>
+            </div>
+        </div>
+
+
+    {% endfor %}
+{% endblock %}

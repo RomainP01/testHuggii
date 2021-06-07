@@ -1,0 +1,16 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Noms</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody >
+    {% for trash in trashs %}
+        <tr>
+            <td>{{trash.name}}</td>
+            <td><a class="btn btn-secondary" href="{{ path("pdf_trash", {id : trash.id}) }}">Voir</a> <a class="btn btn-secondary" href="{{ path("pdf_trash_download", {id : trash.id}) }}">Télécharger</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

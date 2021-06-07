@@ -1,0 +1,18 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-4">{{ form_row(form.Name) }}</div>
+    <div class="col-md-4">{{ form_row(form.Weight) }}</div>
+
+
+</div>
+<div class="row">
+    <div class="col-md-8">{{ form_row(form.TrashType) }}</div>
+</div>
+<div class="row">
+
+    <div class="col-md-2">{{ form_row(form.CreationDate) }}</div>
+    <div class="col-md-2">{{ form_row(form.PickupDate) }}</div>
+</div>
+{{ form_widget(form) }}
+<button class="btn btn-primary">{{button|default('Enregistrer')}}</button>
+{{ form_end(form) }}

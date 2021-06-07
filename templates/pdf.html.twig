@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PDFTrashController!{% endblock %}
+
+{% block body %}
+
+        <div class="container">
+            <div class="row justify-content-md-between">
+
+                <div class="col-4">
+                    <h3>Référence : {{ id }}</h3>
+                </div>
+                <div class="col-6">
+                    <h3>Date de création : {{ dateC|date('d-m-Y')}}</h3>
+                </div>
+
+            </div>
+            <div>
+                <h1 style="margin-top: 10%; margin-left: 15%">{{ nom }}</h1>
+            </div>
+            <div>
+                <h4>{{ type }}</h4>
+            </div>
+            <div>
+                <h4>Date d'enlèvement : {{ dateE|date('d-m-Y')}}</h4>
+            </div>
+        </div>
+
+
+
+{% endblock %}

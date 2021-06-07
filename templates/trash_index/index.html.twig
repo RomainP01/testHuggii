@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TrashIndexController!{% endblock %}
+
+{% block body %}
+    <div class="container mt-4" >
+        <h1>Voir les déchets</h1>
+        <a href="{{ path( "trash_creation") }}" class="btn btn-secondary">Créer un dechet</a>
+        <form id="formSearch">
+            <input type="date" class="form-control" id="searchBar"  placeholder="Rechercher">
+
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Filtrer par : </h3>
+                </div>
+                <div class="col-md-2">
+                    <label for="creationBox">Date de création</label>
+                    <input type="radio" id="creationBox" value="true" checked="true" name="date" >
+                </div>
+                <div class="col-md-2">
+                    <label for="creationBox">Date d'enlèvement </label>
+                    <input type="radio" id="pickupBox" value="true" name="date">
+                </div>
+            </div>
+        </form>
+        <div id="content">
+            {% include "trash_index/_content.html.twig" %}
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('assets/filter.js') }}"></script>
+{% endblock %}
